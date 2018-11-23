@@ -34,4 +34,11 @@ public class Manager extends AbstractEmployee {
         return Double.compare(manager.getBonus(), getBonus()) == 0;
     }
 
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "bonus=" + bonus +
+                super.toString() +
+                '}';
+    }
 }
