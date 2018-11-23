@@ -15,4 +15,9 @@ public class Employee extends AbstractEmployee {
         if (!(testEmployee instanceof Employee)) return false;
         return  super.equals(testEmployee);
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" + super.toString() +"}";
+    }
 }
