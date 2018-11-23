@@ -6,6 +6,9 @@ import java.util.Objects;
 public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
 
     private String name;
+    private Double salary;
+    private Date dateOfEmployment;
+    private int id;
 
     public void setName(String name) {
         this.name = name;
@@ -14,8 +17,6 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
         return name;
     }
 
-
-    private double salary;
     public void setSalary(double salary) {
         this.salary = salary;
     }
@@ -23,7 +24,6 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
         return salary;
     }
 
-    private Date dateOfEmployment;
     public void setDateOfEmployment(Date dateOfEmployment) {
         this.dateOfEmployment = dateOfEmployment;
     }
@@ -31,7 +31,6 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
         return dateOfEmployment;
     }
 
-    private int id;
     public void setId(int id) {
         this.id = id;
     }
