@@ -36,6 +36,15 @@ public class Management {
     }
 
     /**
+     * Removes the given person from the list.
+     * @param e1 Element to remove.
+     * @return true, if person is found and removed. false, if person is not found
+     */
+    public boolean remove(AbstractEmployee e1){
+       return personalList.remove(e1);
+    }
+
+    /**
      * Get the person with the min salary
      * @return Returns an abstract employee, null if list is empty
      */
