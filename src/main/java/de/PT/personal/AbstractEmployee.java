@@ -3,7 +3,7 @@ package de.PT.personal;
 import java.util.Date;
 import java.util.Objects;
 
-public abstract class AbstractEmployee {
+public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
 
     private String name;
 
@@ -63,4 +63,7 @@ public abstract class AbstractEmployee {
                 Objects.equals(getDateOfEmployment(), that.getDateOfEmployment());
     }
 
-}
+    @Override
+    public int compareTo(AbstractEmployee e2) {
+        return this.salary.compareTo(e2.getSalary());
+    }
