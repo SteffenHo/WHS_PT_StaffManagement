@@ -18,6 +18,11 @@ public class Manager extends AbstractEmployee {
         this.bonus = bonus;
     }
 
+    /**
+     * Equal if all properties of manager and abstractEmployee are the same.
+     * @param testManager person to compare with
+     * @return true if equal
+     */
     @Override
     public boolean equals(Object testManager) {
         if(this == testManager){
@@ -34,6 +39,10 @@ public class Manager extends AbstractEmployee {
         return Double.compare(manager.getBonus(), getBonus()) == 0;
     }
 
+    /**
+     * Returns a string wit all properties of manager and abstractEmployee
+     * @return String
+     */
     @Override
     public String toString() {
         return "Manager{" +

@@ -45,12 +45,22 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
         setId(id);
     }
 
+    /**
+     * Function to change the salary of a person
+     * @param percentage The percentage the salary should increase. Negative values will decrement the salary.
+     * @return The new salary
+     */
     public double updateSalary(double percentage) {
         double newSalary = getSalary() * ((percentage / 100) + 1);
         setSalary(newSalary);
         return  newSalary;
     }
 
+    /**
+     * Equals if all properties are the same
+     * @param testStaff Person to compare with
+     * @return true if equal
+     */
     @Override
     public boolean equals(Object testStaff) {
         if (this == testStaff) return true;
@@ -62,11 +72,20 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
                 Objects.equals(getDateOfEmployment(), that.getDateOfEmployment());
     }
 
+    /**
+     * Compares the persons by salary
+     * @param e2 The person to be compared with
+     * @return Int value for Comparable interface
+     */
     @Override
     public int compareTo(AbstractEmployee e2) {
         return this.salary.compareTo(e2.getSalary());
     }
 
+    /**
+     * Returns a string with all properties of abstract employee
+     * @return String
+     */
     @Override
     public String toString() {
         return "AbstractEmployee{" +

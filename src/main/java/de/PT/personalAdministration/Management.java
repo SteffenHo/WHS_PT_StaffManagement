@@ -19,7 +19,7 @@ public class Management {
     /**
      * Adds a person to the personal list.
      * @param e1 abstract employee
-     * @return true -> added, false -> found duplicate
+     * @return true = added, false = found duplicate
      */
     public boolean add(AbstractEmployee e1){
         boolean hasSame = false;
@@ -72,7 +72,7 @@ public class Management {
 
     /**
      * returns the string of all personals
-     * @return
+     * @return String
      */
     @Override
     public String toString(){

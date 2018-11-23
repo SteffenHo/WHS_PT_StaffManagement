@@ -23,8 +23,8 @@ public class Main {
         man.min();
         man.max();
         man.add(e1);
-        man.min();
-        man.max();
+        System.out.println(man.min());
+        System.out.println(man.max());
         System.out.println( man.add(e1));
         man.add(e2);
         man.add(e3);
@@ -34,6 +34,10 @@ public class Main {
         System.out.println("min" + man.min());
         System.out.println("mx" + man.max());
         System.out.println("\n\n\n");
+        System.out.println(man);
+
+        System.out.println(man.remove(e1));
+        System.out.println(man.remove(e1));
         System.out.println(man);
 
         // tests

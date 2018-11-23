@@ -9,6 +9,11 @@ public class Employee extends AbstractEmployee {
         super(name, salary, dateOfEmployment, id);
     }
 
+    /**
+     * Equal if all properties of abstractEmployee and employee are the same
+     * @param testEmployee Person to compare with
+     * @return true if same
+     */
     @Override
     public boolean equals(Object testEmployee) {
         if (this == testEmployee) return true;
@@ -16,6 +21,10 @@ public class Employee extends AbstractEmployee {
         return  super.equals(testEmployee);
     }
 
+    /**
+     * Return a string with all properties of employee and abstractEmployee
+     * @return
+     */
     @Override
     public String toString() {
         return "Employee{" + super.toString() +"}";
