@@ -67,3 +67,14 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
     public int compareTo(AbstractEmployee e2) {
         return this.salary.compareTo(e2.getSalary());
     }
+
+    @Override
+    public String toString() {
+        return "AbstractEmployee{" +
+                "name='" + name + '\'' +
+                ", salary=" + salary +
+                ", dateOfEmployment=" + dateOfEmployment +
+                ", id=" + id +
+                '}';
+    }
+}
