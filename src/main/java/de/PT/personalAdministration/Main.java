@@ -1,9 +1,10 @@
-package de.PT.personal;
+package de.PT.personalAdministration;
 
-import de.PT.personalAdministration.Management;
+import de.PT.personal.AbstractEmployee;
+import de.PT.personal.Employee;
+import de.PT.personal.Manager;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
