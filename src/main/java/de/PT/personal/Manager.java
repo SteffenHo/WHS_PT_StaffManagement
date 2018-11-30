@@ -1,5 +1,7 @@
 package de.PT.personal;
 
+import de.PT.interfaces.Size;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -16,6 +18,15 @@ public class Manager extends AbstractEmployee {
     public Manager(String name, double salary, Date dateOfEmployment, int id, double bonus) {
         super(name, salary, dateOfEmployment, id);
         this.bonus = bonus;
+    }
+
+    /**
+     * Get the max size the Managers dress is available. Manager have XL Employees L
+     * @return
+     */
+    @Override
+    public Size maxAvailableSize() {
+        return Size.L;
     }
 
     /**

@@ -22,13 +22,7 @@ public class Management {
      * @return true = added, false = found duplicate
      */
     public boolean add(AbstractEmployee e1){
-        boolean hasSame = false;
-        for( AbstractEmployee employee : personalList){
-            if(employee.equals(e1)){
-                hasSame = true;
-            }
-        }
-        if(!hasSame){
+        if(!personalList.contains(e1)){
             personalList.add(e1);
             return true;
         }
@@ -49,11 +43,11 @@ public class Management {
      * @return Returns an abstract employee, null if list is empty
      */
     public AbstractEmployee min(){
-        if(personalList.size() == 0){
+        if(personalList.isEmpty()){
             return  null;
         }
-        Collections.sort(personalList);
-        return personalList.get(0);
+        ArrayList<AbstractEmployee> l = sort();
+        return l.get(0);
     }
 
     /**
@@ -61,14 +55,17 @@ public class Management {
      * @return Returns an abstract employee, null if list is empty
      */
     public AbstractEmployee max(){
-        int length = personalList.size();
-        if(length == 0){
+        if(personalList.isEmpty()){
             return  null;
         }
-        Collections.sort(personalList);
-        return personalList.get(length - 1);
+         ArrayList<AbstractEmployee> l = sort();
+        return l.get(l.size() - 1);
     }
 
+    public ArrayList<AbstractEmployee> sort(){
+        Collections.sort(personalList);
+        return  personalList;
+    }
 
     /**
      * returns the string of all personals

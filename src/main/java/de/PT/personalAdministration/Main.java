@@ -41,6 +41,9 @@ public class Main {
         System.out.println(man.remove(e1));
         System.out.println(man);
 
+        man.sort();
+        System.out.println(man);
+
         // tests
         boolean t1 = e1.equals(e2);
         boolean t2 = e2.equals(m1);

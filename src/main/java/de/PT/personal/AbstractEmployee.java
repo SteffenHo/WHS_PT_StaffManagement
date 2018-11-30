@@ -1,14 +1,18 @@
 package de.PT.personal;
 
+import de.PT.interfaces.DressSizeChangeable;
+import de.PT.interfaces.Size;
+
 import java.util.Date;
 import java.util.Objects;
 
-public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
+public abstract class AbstractEmployee implements Comparable<AbstractEmployee>, DressSizeChangeable {
 
     private String name;
     private Double salary;
     private Date dateOfEmployment;
     private int id;
+    private Size dressSize;
 
     public void setName(String name) {
         this.name = name;
@@ -81,6 +85,26 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee> {
     public int compareTo(AbstractEmployee e2) {
         return this.salary.compareTo(e2.getSalary());
     }
+
+    /**
+     * Get the size of the Employees dress
+     * @return Size
+     */
+    @Override
+    public Size getSize() {
+        return dressSize;
+    }
+
+    /**
+     * Set the size of Employees dress
+     * @param clothingSize
+     * @return
+     */
+    @Override
+    public Size setSize(Size clothingSize) {
+       return this.dressSize = clothingSize;
+    }
+
 
     /**
      * Returns a string with all properties of abstract employee
