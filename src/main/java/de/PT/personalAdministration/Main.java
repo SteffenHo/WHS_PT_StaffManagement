@@ -3,10 +3,12 @@ package de.PT.personalAdministration;
 import de.PT.personal.AbstractEmployee;
 import de.PT.personal.Employee;
 import de.PT.personal.Manager;
+import de.PT.utils.Pair;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,6 +46,8 @@ public class Main {
         man.sort();
         System.out.println(man);
 
+        Pair<Manager> p = man.getManagerPair();
+        System.out.println(p.toString());
         // tests
         boolean t1 = e1.equals(e2);
         boolean t2 = e2.equals(m1);
