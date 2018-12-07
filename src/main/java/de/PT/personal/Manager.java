@@ -3,7 +3,6 @@ package de.PT.personal;
 import de.PT.interfaces.Size;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class Manager extends AbstractEmployee {
 
