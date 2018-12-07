@@ -1,7 +1,12 @@
 package de.PT.personalAdministration;
 import de.PT.personal.AbstractEmployee;
+import de.PT.personal.Manager;
+import de.PT.utils.ManagerComparator;
+import de.PT.utils.Pair;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Management {
     private ArrayList<AbstractEmployee> personalList;
@@ -67,6 +72,20 @@ public class Management {
         return  personalList;
     }
 
+
+    /**
+     * Get the manager with the smallest bonus and the biggest bonus in a pair
+     * @return pair of manager
+     */
+    public Pair<Manager> getManagerPair(){
+        ArrayList<Manager> list = personalList.stream().filter(em -> em instanceof Manager).map(e -> (Manager) e).sorted(new ManagerComparator()).collect(Collectors.toCollection(ArrayList::new));
+
+
+        Pair<Manager>pair = new Pair<>();
+        pair.setFirst(list.get(0));
+        pair.setSecond(list.get(list.size() -1));
+        return pair;
+    }
     /**
      * returns the string of all personals
      * @return String
