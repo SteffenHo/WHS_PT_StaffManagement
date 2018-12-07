@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"de.PT.personal","l":"AbstractEmployee"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"de.PT.personal","l":"Employee"},{"p":"de.PT.personalAdministration","l":"Main"},{"p":"de.PT.personalAdministration","l":"Management"},{"p":"de.PT.personal","l":"Manager"}]

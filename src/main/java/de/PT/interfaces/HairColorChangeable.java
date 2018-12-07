@@ -1,5 +1,9 @@
 package de.PT.interfaces;
 
+
+/**
+ * Manage the hair color
+ */
 public interface HairColorChangeable {
 
     /**

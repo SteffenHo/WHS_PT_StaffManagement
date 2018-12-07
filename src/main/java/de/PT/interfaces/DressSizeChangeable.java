@@ -1,6 +1,8 @@
 package de.PT.interfaces;
 
-
+/**
+ * Manage the dress size
+ */
 public interface DressSizeChangeable {
     /**
      * max Site of all dresses
