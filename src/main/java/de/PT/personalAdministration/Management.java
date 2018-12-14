@@ -6,20 +6,22 @@ import de.PT.utils.Pair;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Management {
-    private ArrayList<AbstractEmployee> personalList;
+    private HashMap<Integer, AbstractEmployee> personalList;
 
-    public ArrayList<AbstractEmployee> getPersonalList() {
+    public HashMap<Integer, AbstractEmployee> getPersonalList() {
         return personalList;
     }
-    public void setPersonalList(ArrayList<AbstractEmployee> personalList) {
+    public void setPersonalList(HashMap<Integer, AbstractEmployee>personalList) {
         this.personalList = personalList;
     }
 
     public Management(){
-        personalList = new ArrayList<AbstractEmployee>();
+        personalList = new HashMap<Integer, AbstractEmployee>();
     }
     /**
      * Adds a person to the personal list.
@@ -27,8 +29,8 @@ public class Management {
      * @return true = added, false = found duplicate
      */
     public boolean add(AbstractEmployee e1){
-        if(!personalList.contains(e1)){
-            personalList.add(e1);
+        if(!personalList.keySet().contains(e1.getId())){
+            personalList.put(e1.getId(), e1);
             return true;
         }
         return false;
@@ -40,7 +42,8 @@ public class Management {
      * @return true, if person is found and removed. false, if person is not found
      */
     public boolean remove(AbstractEmployee e1){
-       return personalList.remove(e1);
+       AbstractEmployee retVal = personalList.remove(e1.getId());
+       return retVal != null;
     }
 
     /**
@@ -68,8 +71,9 @@ public class Management {
     }
 
     public ArrayList<AbstractEmployee> sort(){
-        Collections.sort(personalList);
-        return  personalList;
+        ArrayList<AbstractEmployee> list =  new ArrayList<>(personalList.values());
+        Collections.sort(list);
+        return  list;
     }
 
 
@@ -78,7 +82,7 @@ public class Management {
      * @return pair of manager
      */
     public Pair<Manager> getManagerPair(){
-        ArrayList<Manager> list = personalList.stream().filter(em -> em instanceof Manager).map(e -> (Manager) e).sorted(new ManagerComparator()).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Manager> list = personalList.values().stream().filter(em -> em instanceof Manager).map(e -> (Manager) e).sorted(new ManagerComparator()).collect(Collectors.toCollection(ArrayList::new));
 
 
         Pair<Manager>pair = new Pair<>();
@@ -93,7 +97,7 @@ public class Management {
     @Override
     public String toString(){
         StringBuilder st = new StringBuilder();
-        for(AbstractEmployee employee : personalList){
+        for(AbstractEmployee employee : personalList.values()){
 
             st.append(employee.toString() + "\n");
         }
