@@ -3,6 +3,7 @@ package de.PT.personalAdministration;
 import de.PT.personal.AbstractEmployee;
 import de.PT.personal.Employee;
 import de.PT.personal.Manager;
+import de.PT.utils.Bubblesort;
 import de.PT.utils.Pair;
 
 import java.util.ArrayList;
@@ -13,6 +14,13 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Praktikum 3 Aufgabe 2");
+
+        Integer[] l1 = {1,4,6,8,90,454,45,346,78,7,7,898};
+        Integer[] lb = Bubblesort.sort(l1);
+        Double[] l2 ={1.4545,234.6,345.6575,7.4546,0.6235,7866.7,6.9};
+        Double[] lc = Bubblesort.sort(l2);
+        String[] l3 = {"öngvöenae", "öisvnsna", "a", "bb", "c"};
+        String[] ld = Bubblesort.sort(l3);
 
         Employee e1 = new Employee("Albert", 2000, new Date(), 1);
         Employee e2 = new Employee("Berta", 2400, new Date(), 2);
