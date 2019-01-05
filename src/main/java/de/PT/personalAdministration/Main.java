@@ -1,11 +1,13 @@
 package de.PT.personalAdministration;
 
+import de.PT.Frontend.MainFrame;
 import de.PT.personal.AbstractEmployee;
 import de.PT.personal.Employee;
 import de.PT.personal.Manager;
 import de.PT.utils.Bubblesort;
 import de.PT.utils.Pair;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -73,9 +75,14 @@ public class Main {
 
         Collections.sort(list);
         int lentgth = list.size();
-        for(AbstractEmployee employee : list){
 
-        }
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                MainFrame inst = new MainFrame(man);
+                inst.setLocationRelativeTo(null);
+                inst.setVisible(true);
+            }
+        });
 
     }
 }
