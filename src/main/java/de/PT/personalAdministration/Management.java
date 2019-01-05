@@ -16,6 +16,17 @@ public class Management {
     public HashMap<Integer, AbstractEmployee> getPersonalList() {
         return personalList;
     }
+
+    public Object[][] getPersonalListForTable(){
+        Object[][] data = new Object[getPersonalList().values().size()][7]; // = {getPersonalList().values().toArray()};
+       System.out.println(getPersonalList().values().toArray());
+       int i = 0;
+       for(AbstractEmployee e : getPersonalList().values()){
+               data[i] = e.toObjectArray();
+               i++;
+       }
+        return data;
+    }
     public void setPersonalList(HashMap<Integer, AbstractEmployee>personalList) {
         this.personalList = personalList;
     }
@@ -102,5 +113,9 @@ public class Management {
             st.append(employee.toString() + "\n");
         }
         return  st.toString();
+    }
+
+    public int getNextId(){
+        return  999;
     }
 }
