@@ -119,4 +119,9 @@ public abstract class AbstractEmployee implements Comparable<AbstractEmployee>, 
                 ", id=" + id +
                 '}';
     }
+
+    public Object[] toObjectArray(){
+        Object[] obj = {getId(), getName(), getSalary(), getDateOfEmployment(), getSize(), false, 0};
+        return  obj;
+    }
 }
