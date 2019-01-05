@@ -28,6 +28,12 @@ public class Manager extends AbstractEmployee {
         return Size.L;
     }
 
+    @Override
+    public Object[] toObjectArray(){
+        Object[] obj = {getId(), getName(), getSalary(), getDateOfEmployment(), getSize(), true, getBonus()};
+        return  obj;
+    }
+
     /**
      * Equal if all properties of manager and abstractEmployee are the same.
      * @param testManager person to compare with
