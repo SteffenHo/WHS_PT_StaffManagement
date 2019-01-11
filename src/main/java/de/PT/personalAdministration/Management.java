@@ -1,4 +1,5 @@
 package de.PT.personalAdministration;
+import de.PT.Frontend.MainFrame;
 import de.PT.personal.AbstractEmployee;
 import de.PT.personal.Manager;
 import de.PT.utils.ManagerComparator;
@@ -12,11 +13,11 @@ import java.util.stream.Collectors;
 
 public class Management {
     private HashMap<Integer, AbstractEmployee> personalList;
+    public MainFrame mainFrame;
 
     public HashMap<Integer, AbstractEmployee> getPersonalList() {
         return personalList;
     }
-
     public Object[][] getPersonalListForTable(){
         Object[][] data = new Object[getPersonalList().values().size()][7]; // = {getPersonalList().values().toArray()};
        System.out.println(getPersonalList().values().toArray());
@@ -42,6 +43,9 @@ public class Management {
     public boolean add(AbstractEmployee e1){
         if(!personalList.keySet().contains(e1.getId())){
             personalList.put(e1.getId(), e1);
+            if(mainFrame != null) {
+                mainFrame.refresh();
+            }
             return true;
         }
         return false;
@@ -54,6 +58,9 @@ public class Management {
      */
     public boolean remove(AbstractEmployee e1){
        AbstractEmployee retVal = personalList.remove(e1.getId());
+        if(mainFrame != null) {
+            mainFrame.refresh();
+        }
        return retVal != null;
     }
 
@@ -115,7 +122,19 @@ public class Management {
         return  st.toString();
     }
 
+    /**
+     * Get a new id for persona
+     * @return
+     */
     public int getNextId(){
-        return  999;
+        return  personalList.size() + 10;
+    }
+
+    /**
+     * Add a window to the Management.
+     * @param mf
+     */
+    public void addMainFram(MainFrame mf){
+        mainFrame = mf;
     }
 }
