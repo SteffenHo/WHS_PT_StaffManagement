@@ -32,10 +32,17 @@ public class AddPerson {
 
         JButton btnSave = new JButton("Speichern");
         btnSave.addActionListener((event) ->{
+            double sallary = 0;
+            try {
+                sallary =  Double.parseDouble(txtSalary.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(man.mainFrame, "Das Gehalt ist keine gueltige eingabe");
+                return;
+            }
             if(btnManager.isSelected()){
-                man.add(new Manager(txtName.getText(), Double.parseDouble(txtSalary.getText()), new Date(), Integer.parseInt(lblIdContent.getText()), 0));
+                man.add(new Manager(txtName.getText(), sallary, new Date(), Integer.parseInt(lblIdContent.getText()), 0));
             } else {
-                man.add(new Employee(txtName.getText(), Double.parseDouble(txtSalary.getText()), new Date(), Integer.parseInt(lblIdContent.getText())));
+                man.add(new Employee(txtName.getText(), sallary, new Date(), Integer.parseInt(lblIdContent.getText())));
             }
         });
 
