@@ -64,7 +64,7 @@ public class CustomMenuBar {
         JMenuItem newItem = new JMenuItem("Erstellen");
         newItem.addActionListener((event) -> {
             System.out.println("Erstellen " + event);
-            new CustomDialog("Erstellen", new AddPerson().getView(man)).setVisible(true);
+            new CustomDialog("Erstellen", new AddPerson(man)).setVisible(true);
         });
         empleyeeMenu.add(newItem);
 

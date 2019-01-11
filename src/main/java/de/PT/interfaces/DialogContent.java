@@ -1,4 +1,4 @@
-package de.PT.Frontend;
+package de.PT.interfaces;
 
 import javax.swing.*;
 
