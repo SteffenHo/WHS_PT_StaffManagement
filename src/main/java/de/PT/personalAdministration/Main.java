@@ -30,7 +30,7 @@ public class Main {
 
         Manager m1 = new Manager("Doris", 3000, new Date(), 4, 400);
         Manager m2 = new Manager("Emanuel", 7000, new Date(), 5, 800);
-        Manager m3 = new Manager("Conny", 1400, new Date(), 3, 500);
+        Manager m3 = new Manager("Conny", 1400, new Date(), 6, 500);
 
         Management man = new Management();
         man.min();
